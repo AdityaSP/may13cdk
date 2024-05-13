@@ -58,3 +58,15 @@ function fullname(person :Employee) {
 
 console.log(fullname(aditya))
 
+
+// p1 = x1, y1
+// p2 = x2, y2
+// distance between points -- (p1: Point, p2 :Point) => number
+// sqrt((x1-x2)**2 + (y1-y2)**2) 
+// Math.pow(2,3)  -- 8
+// Math.sqrt(4)  -- 2
+
+
+
+
+
