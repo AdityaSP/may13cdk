@@ -16,6 +16,7 @@ class EmployeeC {
         this.empid = empid
         if (typeof age !== undefined)
             this.age = age
+
     }
 
     // camelCase
@@ -34,3 +35,24 @@ const jw = new EmployeeC("John","Wick","Wick","Mr","ABC005")
 
 console.log("Birth year of Aditya", adi.getBirthYear())
 console.log("Birth year of JW", jw.getBirthYear());
+
+
+class DepartmentC{
+    name: string;
+    head: EmployeeC
+    constructor(name :string, emp :EmployeeC){
+        this.name = name
+        this.head = emp
+    }
+
+    getHeadOfDept() {
+        return this.head.getFullName()
+    }    
+}
+
+const depcs = new DepartmentC("Computer Sc", adi)
+
+const deppsy = new DepartmentC("Psychology", jw);
+
+console.log("Head of dept ", depcs.name, "is", depcs.getHeadOfDept())
+console.log("Head of dept ", deppsy.name, "is", deppsy.getHeadOfDept());
