@@ -1,0 +1,26 @@
+//L1 construct
+// https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_s3.CfnBucket.html
+
+    const cfnbucketprops :CfnBucketProps= {
+      lifecycleConfiguration: {
+        rules: [
+          {
+            status: "Enabled",
+            expirationInDays: 10,
+          },
+        ],
+      },
+    };
+
+    new cdk.aws_s3.CfnBucket(this, "MyS31", cfnbucketprops);
+
+    //L2 construct
+//https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_s3.Bucket.html
+    const l2bucketprops :BucketProps = {
+      lifecycleRules: [
+        {
+          expiration: cdk.Duration.days(3),
+        },
+      ],
+    };
+    new cdk.aws_s3.Bucket(this, "MyS32", l2bucketprops)
